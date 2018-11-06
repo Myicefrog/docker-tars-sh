@@ -1,14 +1,12 @@
-FROM tarscloud/tars:dev
+FROM tarscloud/tars-node
 
 WORKDIR /root/
 
 VOLUME ["/data"]
 	
-##拷贝资源
 COPY install.sh /root/init/
-COPY t_server_notifys.sql /root/sql
+COPY entrypoint.sh /sbin/
+
+RUN chmod 755 /sbin/entrypoint.sh
 ENTRYPOINT [ "/sbin/entrypoint.sh", "start" ]
 
-#Expose ports
-EXPOSE 3000
-EXPOSE 80
