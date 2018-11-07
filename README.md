@@ -11,3 +11,6 @@ host_run_docker_tars.sh
 
 即可访问：http://192.168.79.134:3000
 
+扩展tars-node
+
+node_run_docker_tars.sh
